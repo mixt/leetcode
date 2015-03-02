@@ -8,7 +8,6 @@ public class Solution {
                 p *= 26;
             }
             j += (b - 64) * p;
-            i--;
         }
         return j;
     }
