@@ -41,10 +41,16 @@ public class Solution {
         	}
         }
         if(l1 == null) {
-        	last.next = l2;
+        	while(l2 != null) {
+        	    last.next = l2;
+        	    last = last.next;
+        	    l2 = l2.next;
         }
         else if(l2 == null) {
-        	last.next = l1;
+        	while(l1 != null) {
+        	    last.next = l1;
+        	    last = last.next;
+        	    l1 = l1.next;
         }
         return head;
     }
