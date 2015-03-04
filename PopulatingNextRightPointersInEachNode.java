@@ -33,3 +33,26 @@ public class Solution {
  * 是否是最后一行(line 16)，若不是则将其设为当前top并更新head为下一行行头(line 17,18)。
  * 注意line 19，每一行行头的左儿子与右儿子的连接是在这时候建立的。
  */
+
+/**
+ * 另一种解法，个人认为更符合一般的思维
+ * public class Solution {
+ *   public void connect(TreeLinkNode root) {
+ *      if(root == null) { //检查输入值
+ *           return;
+ *       }
+ *       TreeLinkNode top = root; //初始化两个变量
+ *       TreeLinkNode head = root;
+ *       while(head.left != null) {  //检查是否为最后一行
+ *           top = head;             //换行
+ *           head = head.left;       //存储下一行行头
+ *            while(top.next != null) {   //检查是否行尾
+ *                top.right.next = top.next.left; //连接当前top的右儿子与下一个top的左儿子
+ *                top.left.next = top.right;  //连接当前top的左右儿子
+ *                top = top.next;  //切换到下一个top
+ *            }
+ *            top.left.next = top.right; //
+ *       }
+ *   }
+ * }
+ */
