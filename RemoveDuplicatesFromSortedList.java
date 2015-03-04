@@ -20,7 +20,7 @@ public class Solution {
         ListNode last = head;  //当输入包含2个以上节点时初始化比较的前项和后项
         ListNode now = head.next;
         while(now != null) {  //检查是否到达List末尾
-            if(now.val == last.val) {  //如果比较的前后项值相同
+            if(now.val == last.val) {  //如果比较的前后项值相同，将前项的next指向更后面一项，并更新后项
                 last.next = now.next;
                 now = now.next;
             }
